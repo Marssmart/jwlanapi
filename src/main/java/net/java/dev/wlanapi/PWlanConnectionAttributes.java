@@ -15,25 +15,24 @@
  *******************************************************************************/
 package net.java.dev.wlanapi;
 
+import com.sun.jna.Structure;
 import java.util.Arrays;
 import java.util.List;
 
-import com.sun.jna.Structure;
+public class PWlanConnectionAttributes extends Structure {
 
-public class PWlanConnectionAttributes extends Structure
-{
-    public static class ByReference extends PWlanConnectionAttributes implements Structure.ByReference 
-    {
-    	
-    }
-	
-    public WlanConnectionAttributes.ByReference WlanConnectionAttributes;
-    //public WlanConnectionAttributes WlanConnectionAttributes;
-	
-	@Override
-	protected List<String> getFieldOrder() {
-		return Arrays.asList("WlanConnectionAttributes");
-	}
+  public WlanConnectionAttributes.ByReference WlanConnectionAttributes;
+
+  @Override
+  protected List<String> getFieldOrder() {
+    return Arrays.asList("WlanConnectionAttributes");
+  }
+  //public WlanConnectionAttributes WlanConnectionAttributes;
+
+  public static class ByReference extends PWlanConnectionAttributes implements
+      Structure.ByReference {
+
+  }
 
 };
 

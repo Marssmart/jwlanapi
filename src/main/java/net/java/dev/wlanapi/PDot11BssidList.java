@@ -15,19 +15,17 @@
  *******************************************************************************/
 package net.java.dev.wlanapi;
 
+import com.sun.jna.Structure;
 import java.util.Arrays;
 import java.util.List;
 
-import com.sun.jna.Structure;
+public class PDot11BssidList extends Structure {
 
-public class PDot11BssidList extends Structure
-{
-	public Dot11BssidList.ByReference dot11BssidList;
-	
-	@Override
-	protected List<String> getFieldOrder()
-	{
-		return Arrays.asList("dot11BssidList");
-	}
+  public Dot11BssidList.ByReference dot11BssidList;
+
+  @Override
+  protected List<String> getFieldOrder() {
+    return Arrays.asList("dot11BssidList");
+  }
 
 }

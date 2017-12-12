@@ -15,12 +15,11 @@
  *******************************************************************************/
 package net.java.dev.wlanapi;
 
-public enum WlanConnectionMode
-{
-	PROFILE,
-	TEMPORARY_PROFILE,
-	DISCOVERY_SECURE,
-	DISCOVERY_UNSECURE,
-	AUTO,
-	INVALID;
+public enum WlanConnectionMode {
+  PROFILE,
+  TEMPORARY_PROFILE,
+  DISCOVERY_SECURE,
+  DISCOVERY_UNSECURE,
+  AUTO,
+  INVALID;
 }

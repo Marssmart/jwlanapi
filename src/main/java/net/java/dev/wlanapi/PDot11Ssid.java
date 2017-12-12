@@ -15,18 +15,16 @@
  *******************************************************************************/
 package net.java.dev.wlanapi;
 
+import com.sun.jna.Structure;
 import java.util.Arrays;
 import java.util.List;
 
-import com.sun.jna.Structure;
+public class PDot11Ssid extends Structure {
 
-public class PDot11Ssid extends Structure
-{
-	public Dot11Ssid.ByReference dot11Ssid;
-	
-	@Override
-	protected List<String> getFieldOrder()
-	{
-		return Arrays.asList("dot11Ssid");
-	}
+  public Dot11Ssid.ByReference dot11Ssid;
+
+  @Override
+  protected List<String> getFieldOrder() {
+    return Arrays.asList("dot11Ssid");
+  }
 }

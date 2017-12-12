@@ -16,65 +16,64 @@
 package net.java.dev.wlanapi;
 
 /**
- * Describes information about a detected access point. In addition
- * to the attributes described here, the supplicant keeps track of
- * {@code quality}, {@code noise}, and {@code maxbitrate} attributes,
- * but does not currently report them to external clients.
+ * Describes information about a detected access point. In addition to the attributes described
+ * here, the supplicant keeps track of {@code quality}, {@code noise}, and {@code maxbitrate}
+ * attributes, but does not currently report them to external clients.
  */
-public class ScanResult
-{
-    /** The network name. */
-    public String SSID;
-    /** The address of the access point. */
-    public String BSSID;
-    /**
-     * Describes the authentication, key management, and encryption schemes
-     * supported by the access point.
-     */
-    public String capabilities;
-    /**
-     * The detected signal level in dBm. At least those are the units used by
-     * the TI driver.
-     */
-    public int level;
-    /**
-     * The frequency in MHz of the channel over which the client is communicating
-     * with the access point.
-     */
-    public int frequency;
+public class ScanResult {
 
-    /**
-     * We'd like to obtain the following attributes,
-     * but they are not reported via the socket
-     * interface, even though they are known
-     * internally by wpa_supplicant.
-     * {@hide}
-     */
-    public ScanResult(String SSID, String BSSID, String caps, int level, int frequency) {
-        this.SSID = SSID;
-        this.BSSID = BSSID;
-        this.capabilities = caps;
-        this.level = level;
-        this.frequency = frequency;
-        //networkConfig = null;
-    }
+  /**
+   * The network name.
+   */
+  public String SSID;
+  /**
+   * The address of the access point.
+   */
+  public String BSSID;
+  /**
+   * Describes the authentication, key management, and encryption schemes supported by the access
+   * point.
+   */
+  public String capabilities;
+  /**
+   * The detected signal level in dBm. At least those are the units used by the TI driver.
+   */
+  public int level;
+  /**
+   * The frequency in MHz of the channel over which the client is communicating with the access
+   * point.
+   */
+  public int frequency;
 
-    @Override
-    public String toString() {
-        StringBuffer sb = new StringBuffer();
-        String none = "<none>";
+  /**
+   * We'd like to obtain the following attributes, but they are not reported via the socket
+   * interface, even though they are known internally by wpa_supplicant. {@hide}
+   */
+  public ScanResult(String SSID, String BSSID, String caps, int level, int frequency) {
+    this.SSID = SSID;
+    this.BSSID = BSSID;
+    this.capabilities = caps;
+    this.level = level;
+    this.frequency = frequency;
+    //networkConfig = null;
+  }
 
-        sb.append("SSID: ").
-            append(SSID == null ? none : SSID).
-            append(", BSSID: ").
-            append(BSSID == null ? none : BSSID).
-            append(", capabilities: ").
-            append(capabilities == null ? none : capabilities).
-            append(", level: ").
-            append(level).
-            append(", frequency: ").
-            append(frequency);
+  @Override
+  public String toString() {
+    StringBuffer sb = new StringBuffer();
+    String none = "<none>";
 
-        return sb.toString();
-    }
+    sb.append("SSID: ").
+        append(SSID == null ? none : SSID).
+        append(", BSSID: ").
+        append(BSSID == null ? none : BSSID).
+        append(", capabilities: ").
+        append(capabilities == null ? none : capabilities).
+        append(", level: ").
+        append(level).
+        append(", frequency: ").
+        append(frequency);
+
+    return sb.toString();
+  }
 }
